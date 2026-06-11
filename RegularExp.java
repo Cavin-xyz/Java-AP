@@ -12,5 +12,6 @@ public class RegularExp {
         } else {
             System.out.println("Alphanumeric");
         }
+        sc.close();
     }
 }

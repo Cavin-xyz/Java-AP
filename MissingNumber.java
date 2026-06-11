@@ -20,5 +20,6 @@ public class MissingNumber {
         }
 
         System.out.println(findMissingNumber(nums));
+        sc.close();
     }
 }
