@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -7,11 +6,13 @@ public class array_list {
         String[] eatable = { "apple", "orange" };
         String[] fullList = { "apple", "Match", "water", "orange" };
 
-        List<String> fullListStrings = new ArrayList<>(Arrays.asList(fullList));
+        List<String> fullListStrings = Arrays.asList(fullList);
         List<String> eatableList = Arrays.asList(eatable);
 
-        fullListStrings.retainAll(eatableList);
+        fullListStrings.removeAll(eatableList);
         System.out.println(fullListStrings);
+        // fullListStrings.retainAll(eatableList);
+        // System.out.println(fullListStrings);
     }
 
 }
