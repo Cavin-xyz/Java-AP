@@ -1,44 +1,27 @@
 import java.util.*;
 
-class Tree {
-
+public class Tree {
     public static void main(String args[]) {
-
         Scanner sc = new Scanner(System.in);
-
         int n = sc.nextInt();
-
-        ArrayList<Integer> list = new ArrayList<>();
-
-        // Input elements
+        List<Integer> list = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            list.add(sc.nextInt());
+            int digit = sc.nextInt();
+            list.add(digit);
         }
-
-        // Key to delete
-        int x = sc.nextInt();
-
-        // Sort -> inorder traversal of BST
+        int k = sc.nextInt();
         Collections.sort(list);
-
-        // Before deletion
-        System.out.print("Before deletion: ");
-
-        for (int num : list) {
-            System.out.print(num + " ");
+        System.out.print("Before Deletion: ");
+        for (int rev : list) {
+            System.out.print(rev + " ");
         }
-
         System.out.println();
+        list.remove(Integer.valueOf(k));
+        System.out.print("After Deletion: ");
+        for (int rev : list) {
+            System.out.print(rev + " ");
 
-        // Remove by value
-        list.remove(Integer.valueOf(x));
-
-        // After deletion
-        System.out.print("After deletion: ");
-
-        for (int num : list) {
-            System.out.print(num + " ");
         }
-        sc.close();
+
     }
 }
