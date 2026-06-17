@@ -22,6 +22,7 @@ public class Tree {
             System.out.print(rev + " ");
 
         }
+        sc.close();
 
     }
 }
