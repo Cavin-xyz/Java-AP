@@ -23,6 +23,8 @@ public class BusFare {
         String d2 = sc.nextLine();
         d2 = d2.toLowerCase();
         calculate(fare, d1, d2, fkm);
+
+        sc.close();
     }
 
     static void calculate(Map<String, Integer> map, String from, String to, double fkm) {
@@ -34,8 +36,9 @@ public class BusFare {
         System.out.println(from + " to " + to);
         System.out.println("Distance = " + distance + " km");
         System.out.println("Fare = Rs." + fare);
-        System.out.println();
+
     }
+
 }
 
 // fare.put("Vellore",100 );
