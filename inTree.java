@@ -19,8 +19,7 @@ public class inTree {
     static int sum = 0;
     static int countPrimes = 0;
 
-    static void inOrder(Node node,
-            ArrayList<Integer> res) {
+    static void inOrder(Node node, ArrayList<Integer> res) {
         if (node == null)
             return;
         if (node.left == null &&
