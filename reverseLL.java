@@ -59,7 +59,10 @@ public class reverseLL {
 
         System.out.print("Reversed List: ");
         printList(reversedHead); // Prints: 3 -> 2 -> 1 -> null
+
+        sc.close();
     }
+
 }
 
 // public ListNode reverseList(ListNode head){
