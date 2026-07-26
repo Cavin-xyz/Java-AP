@@ -40,5 +40,7 @@ public class matrixplayground {
 
        }
        System.out.println(sum);
+       sc.close();
     }
+    
 }
