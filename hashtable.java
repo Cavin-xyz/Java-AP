@@ -19,7 +19,7 @@ public class hashtable {
 
         String target = sc.next();
         int newID = sc.nextInt();
-
+        
         hp.put(target, newID);
 
         System.out.println(hp);
