@@ -24,6 +24,8 @@ public class hashtable {
 
         System.out.println(hp);
 
+        sc.close();
     }
+    
 
 }
