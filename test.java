@@ -7,26 +7,30 @@ class test {
 
         Scanner sc = new Scanner(System.in);
 
-        int n = sc.nextInt();
-        int arr[] = new int[n];
-
-        for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextInt();
+        String s = sc.nextLine();
+        s = s.toLowerCase();
+        if (isPalindrome(s)) {
+            System.out.println("Palindrome");
+        } else {
+            System.out.println("Not a Palindrome");
         }
-        System.out.println(findLargest(arr));
-
     }
 
-    public static int findLargest(int[] arr) {
-        int max = arr[0];
+    public static boolean isPalindrome(String s) {
 
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] >= max) {
-                max = arr[i];
+        int left = 0;
+        int right = s.length() - 1;
+
+        while (left < right) {
+            if (s.charAt(left) != s.charAt(right)) {
+                return false;
             }
+            left++;
+            right--;
 
         }
-        return max;
+        return true;
 
     }
+
 }
