@@ -28,7 +28,7 @@ public class TwoSumSorted {
         }
         int target = sc.nextInt();
 
-        Arrays.sort(nums); // ensure sorted for two-pointer approach
+        Arrays.sort(nums); 
         int[] ans = twoSum(nums, target);
         System.out.println(ans[0] + " " + ans[1]);
         sc.close();
