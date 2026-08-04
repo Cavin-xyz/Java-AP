@@ -1,6 +1,8 @@
+import java.util.*;
 public class fibonacci {
     public static void main(String[] args) {
-        int n = 10; // Number of terms to print
+        Scanner sc = new Scanner(System.in); 
+        int n = sc.nextInt(); // Number of terms to print
         int firstTerm = 0;
         int secondTerm = 1;
 
