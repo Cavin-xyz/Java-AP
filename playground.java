@@ -1,19 +1,35 @@
-import java.util.Scanner;
-
+import java.util.*;
 public class playground {
+public static void main(String args[]){
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    int arr[] = new int[n];
+    for(int i=0;i<n;i++){
+        arr[i]= sc.nextInt();
+    }
+    int target = sc.nextInt();
 
-    public static int addition(int a, int b){
-         return a+b;
+    int result [] = twoSum(arr, target);
+    System.out.println(Arrays.toString(result));
+        
     }
 
-    public static void main(String args[]){
-        Scanner sc = new Scanner(System.in);
+public static int[] twoSum(int[] arr, int target) {
 
-        int a =sc.nextInt();
-        int b=sc.nextInt();
+    HashMap<Integer, Integer> map = new HashMap<>();
 
-        System.out.println(addition(a,b));
+    for (int i = 0; i < arr.length; i++) {
 
+        int needed = target - arr[i];
+
+        if (map.containsKey(needed)) {
+            return new int[]{map.get(needed), i};
+        }
+
+        map.put(arr[i], i);
     }
+
+    return new int[]{-1, -1};
+}
     
 }
