@@ -1,35 +1,27 @@
 import java.util.*;
-public class playground {
-public static void main(String args[]){
-    Scanner sc = new Scanner(System.in);
-    int n = sc.nextInt();
-    int arr[] = new int[n];
-    for(int i=0;i<n;i++){
-        arr[i]= sc.nextInt();
-    }
-    int target = sc.nextInt();
 
-    int result [] = twoSum(arr, target);
-    System.out.println(Arrays.toString(result));
-        
-    }
+class playground {
+    public static int firstUniqueChar(String s) {
 
-public static int[] twoSum(int[] arr, int target) {
+        HashMap<Character, Integer> map = new HashMap<>();
 
-    HashMap<Integer, Integer> map = new HashMap<>();
-
-    for (int i = 0; i < arr.length; i++) {
-
-        int needed = target - arr[i];
-
-        if (map.containsKey(needed)) {
-            return new int[]{map.get(needed), i};
+        for (char c : s.toCharArray()) {
+            map.put(c, map.getOrDefault(c, 0) + 1);
         }
 
-        map.put(arr[i], i);
+        for (int i = 0; i < s.length(); i++) {
+            if (map.get(s.charAt(i)) == 1) {
+                return i;
+            }
+        }
+        return -1;
+
     }
 
-    return new int[]{-1, -1};
-}
-    
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.nextLine();
+        System.out.println(firstUniqueChar(s));
+    }
 }
