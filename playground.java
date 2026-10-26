@@ -1,27 +1,40 @@
 import java.util.*;
 
 class playground {
-    public static int firstUniqueChar(String s) {
+    public int findMonth(int N, int[][] arr) {
 
-        HashMap<Character, Integer> map = new HashMap<>();
+        int min = Integer.MAX_VALUE;
+        int res = 0;
 
-        for (char c : s.toCharArray()) {
-            map.put(c, map.getOrDefault(c, 0) + 1);
-        }
+        for (int i = 0; i < 12; i++) {
+            int sum = 0;
+            for (int j = 0; j < N; j++) {
+                sum += arr[j][i];
 
-        for (int i = 0; i < s.length(); i++) {
-            if (map.get(s.charAt(i)) == 1) {
-                return i;
+            }
+            if (sum < min) {
+                min = sum;
+                res = i;
             }
         }
-        return -1;
+        return res;
 
     }
 
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
 
-        String s = sc.nextLine();
-        System.out.println(firstUniqueChar(s));
+        int N = sc.nextInt();
+
+        int arr[][] = new int[N][12];
+
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < 12; j++) {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        playground obj = new playground();
+
+        System.out.println(obj.findMonth(N, arr));
     }
 }
